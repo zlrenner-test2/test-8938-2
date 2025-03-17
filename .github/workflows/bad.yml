@@ -1,0 +1,14 @@
+name: PR - bad
+
+on:
+  pull_request:
+
+jobs:
+  pr:
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v4
+      - run: echo $((${{ secrets.FOO_SECRET }} + 1))
