@@ -1,0 +1,14 @@
+name: PR
+
+on:
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  pr:
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v4
